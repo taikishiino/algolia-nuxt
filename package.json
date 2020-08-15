@@ -1,7 +1,6 @@
 {
-  "name": "andpad-nuxt-template",
+  "name": "algolia-nuxt",
   "version": "1.0.0",
-  "author": "88oct.co.jp",
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
