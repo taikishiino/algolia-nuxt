@@ -1,5 +1,8 @@
 # algolia-nuxt
 
+- algolia
+https://www.algolia.com/
+
 ## テスト用json
 ```json
 [
