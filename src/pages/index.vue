@@ -2,8 +2,6 @@
   <div>
     <div>
       <input type="text" v-model="query" />
-    </div>
-    <div>
       <button @click="search">文字列全文検索</button>
     </div>
     <ul
@@ -34,19 +32,16 @@ export default {
     }
   },
   async created() {
-    const result = await index.search("");
+    const result = await index.search(this.query);
     console.warn(result);
     this.testList = result.hits;
   },
   methods: {
     // 変更がないため他のメソッドは省略
-    async search (flag = null) {
-      let query = this.query
-      if (flag !== null) {
-        query = parseInt(query);
-      }
+    async search () {
+      const query = this.query
       console.warn(query);
-      const result = await index.search(this.query, {
+      const result = await index.search(query, {
         "getRankingInfo": true,
         "analytics": false,
         "enableABTest": false,
